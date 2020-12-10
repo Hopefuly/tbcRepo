@@ -8,21 +8,21 @@
           crossDomain: true,
           contentType: "application/json",
           success: function (data, status) {
-            dataMahasiswa = JSON.parse(data.body);
+            karyawan = JSON.parse(data.body);
             $("#jsonTable")
               .css("visibility", "visible")
               .css("border", "1px solid green");
             $("#jsonTableContent").html("");
             var rows = "";
 
-            for (var counter = 0; counter < dataMahasiswa.length; counter++) {
-              console.log(dataMahasiswa[counter]);
+            for (var counter = 0; counter < karyawan.length; counter++) {
+              console.log(karyawan[counter]);
               rows =
                 rows +
                 "<tr><td>" +
-                dataMahasiswa[counter][0] +
+                karyawan[counter][0] +
                 "</td><td>" +
-                dataMahasiswa[counter][1] +
+                karyawan[counter][1] +
                 "</td></tr>";
             }
             $("#jsonTableContent").html(rows);
@@ -48,7 +48,7 @@
       <thead>
         <tr>
           <!-- The JSON downloaded from the URL above provides four attributes.-->
-          <th>NIP</th>
+          <th>NIk</th>
           <th>Nama</th>
         </tr>
       </thead>
