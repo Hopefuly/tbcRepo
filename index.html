@@ -4,25 +4,25 @@
       function hello() {
         $.ajax({
           type: "GET",
-          url: "https://u3ejfnrap3.execute-api.us-east-1.amazonaws.com/api/",
+          url: "https://1g7hvqae2i.execute-api.us-east-1.amazonaws.com/api/",
           crossDomain: true,
           contentType: "application/json",
           success: function (data, status) {
-            dataMahasiswa = JSON.parse(data.body);
+            dataKaryawan = JSON.parse(data.body);
             $("#jsonTable")
               .css("visibility", "visible")
               .css("border", "1px solid green");
             $("#jsonTableContent").html("");
             var rows = "";
 
-            for (var counter = 0; counter < dataMahasiswa.length; counter++) {
-              console.log(dataMahasiswa[counter]);
+            for (var counter = 0; counter < dataKaryawan.length; counter++) {
+              console.log(dataKaryawan[counter]);
               rows =
                 rows +
                 "<tr><td>" +
-                dataMahasiswa[counter][0] +
+                dataKaryawan[counter][0] +
                 "</td><td>" +
-                dataMahasiswa[counter][1] +
+                dataKaryawan[counter][1] +
                 "</td></tr>";
             }
             $("#jsonTableContent").html(rows);
